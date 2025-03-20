@@ -11,7 +11,7 @@ export default function QuestionTimer({ timeOut, onTimeOut }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRemainingTime((prevTime) => prevTime - 100);
+      setRemainingTime((prevTime) => Math.max(prevTime - 100, 0));
     }, 100);
 
     return () => clearInterval(interval);
