@@ -8,7 +8,7 @@ function App() {
       <main>
         <Quiz />
       </main>
-    </>  
+    </>
   );
 }
 

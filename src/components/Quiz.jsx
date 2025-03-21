@@ -1,8 +1,7 @@
-import React, { useState, useCallback } from "react";
-import QUESTIONS from "../questions.js";
+import React, { useCallback, useState } from "react";
+import QUESTIONS from "../Components/question.js";
 import Question from "./Question.jsx";
 import Summary from "./Summary.jsx";
-
 
 function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
@@ -10,28 +9,34 @@ function Quiz() {
   const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer) {
-    setUserAnswers((prevUserAnswer) => {
-      return [...prevUserAnswer, selectedAnswer];
+  const handleSelectAnswer = useCallback(function handleSelectAnswer(
+    selectedAnswer
+  ) {
+    setUserAnswers((prevUserAnswers) => {
+      return [...prevUserAnswers, selectedAnswer];
     });
   },
-  []); 
+  []);
 
-  const handleSkippedAnswer = useCallback(
+  const handleSkipAnswer = useCallback(
     () => handleSelectAnswer(null),
-    [handleSelectAnswer]);
+    [handleSelectAnswer]
+  );
 
   if (quizIsComplete) {
-    return  <Summary userAnswers={userAnswers}/>
+    return <Summary userAnswers={userAnswers} />;
   }
 
   return (
-    <Question 
-      key={activeQuestionIndex}
-      index = {activeQuestionIndex}
-      answerState={answerState}
-      onSkippedAnswer={handleSkippedAnswer}
-    />
+    <div id="quiz">
+      <Question
+        key={activeQuestionIndex}
+        index={activeQuestionIndex}
+        onSelectAnswer={handleSelectAnswer}
+        onSkipAnswer={handleSkipAnswer}
+      />
+    </div>
   );
 }
-  export default Quiz;
+
+export default Quiz;
