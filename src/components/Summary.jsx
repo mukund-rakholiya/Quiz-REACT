@@ -1,7 +1,7 @@
 import React from "react";
 import quizcomplete from "../assets/quiz-complete.png";
 import QUESTIONS from "../question";
-import ResetQuiz from "./ResetQuiz";
+import ResetQuiz from "./ResetQuiz.jsx";
 
 function Summary({ userAnswers,  }) {
   const skippedAnswer = userAnswers.filter((answer) => answer === null);
