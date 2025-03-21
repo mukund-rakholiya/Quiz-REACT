@@ -1,43 +1,24 @@
 import React, { useState, useCallback } from "react";
 import QUESTIONS from "../questions.js";
 import quizComplete from "../assets/quiz-complete.png";
-import QuestionTimer from "./QuestionTimer.jsx";
-import Answers from "./Answers.jsx";
+import Question from "./Question.jsx";
 
 function Quiz() {
-  const [answerState, setAnswerState] = useState("");
   const [userAnswers, setUserAnswers] = useState([]);
 
-  const activeQuestionIndex =
-    answerState === "" ? userAnswers.length : userAnswers.length - 1;
-
+  const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer = useCallback(function handleSelectAnswer(
-    selectedAnswer
-  ) {
-    setAnswerState("answered");
+  const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer) {
     setUserAnswers((prevUserAnswer) => {
       return [...prevUserAnswer, selectedAnswer];
     });
-
-    setTimeout(() => {
-      if (selectedAnswer === QUESTIONS[activeQuestionIndex].answers[0]) {
-        setAnswerState("correct");
-      } else {
-        setAnswerState("wrong");
-      }
-
-      setTimeout(() => {
-        setAnswerState("");
-      }, 2000);
-    }, 1000);
-  });
+  },
+  []); 
 
   const handleSkippedAnswer = useCallback(
     () => handleSelectAnswer(null),
-    [handleSelectAnswer]
-  );
+    [handleSelectAnswer]);
 
   if (quizIsComplete) {
     return (
@@ -49,22 +30,12 @@ function Quiz() {
   }
 
   return (
-    <div id="quiz">
-      <QuestionTimer
-        key={activeQuestionIndex}
-        timeOut={10000}
-        onTimeOut={handleSkippedAnswer}
-      />
-      <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
-      <Answers 
-        key = {activeQuestionIndex}
-        answers = {QUESTIONS[activeQuestionIndex].answers}
-        selectedAnswer = {userAnswers[userAnswers.length - 1]}
-        answerState = {answerState}
-        onSelect = {handleSelectAnswer}
-      />
-    </div>
+    <Question 
+      key={activeQuestionIndex}
+      index = {activeQuestionIndex}
+      answerState={answerState}
+      onSkippedAnswer={handleSkippedAnswer}
+    />
   );
 }
-
-export default Quiz;
+  export default Quiz;
