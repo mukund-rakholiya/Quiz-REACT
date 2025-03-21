@@ -1,8 +1,9 @@
 import React from "react";
 import quizcomplete from "../assets/quiz-complete.png";
 import QUESTIONS from "../question";
+import ResetQuiz from "./ResetQuiz";
 
-function Summary({ userAnswers }) {
+function Summary({ userAnswers,  }) {
   const skippedAnswer = userAnswers.filter((answer) => answer === null);
   const correctAnswer = userAnswers.filter(
     (answer, index) => answer === QUESTIONS[index].answers[0]
@@ -54,6 +55,7 @@ function Summary({ userAnswers }) {
           );
         })}
       </ol>
+      <ResetQuiz />
     </div>
   );
 }

@@ -324,6 +324,28 @@ header h1 {
   letter-spacing: 0.1rem;
 }
 
+.reset-button {
+  background-color: #f1e361;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  /* margin: 10px 175px; */
+  border-radius: 5px;
+}
+
+.reset-button:hover {
+  background-color: #d4c648;
+
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @keyframes slide-in-from-bottom {
   0% {
     opacity: 0;
