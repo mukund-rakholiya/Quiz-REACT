@@ -1,6 +1,6 @@
 import React from "react";
 import quizcomplete from "../assets/quiz-complete.png";
-import QUESTIONS from "./question";
+import QUESTIONS from "../question";
 
 function Summary({ userAnswers }) {
   const skippedAnswer = userAnswers.filter((answer) => answer === null);
