@@ -22,24 +22,24 @@ function Summary({ userAnswers,  }) {
       <img src={quizcomplete} alt="Quiz Completed" />
       <h2>Quiz Completed!</h2>
       <div id="summary-stats">
-        <p>
+        <p> 
           <span className="number">{skippedAnswerShare}%</span>
           <span className="text">skipped</span>
-        </p>
+        </p> 
         <p>
           <span className="number">{correctAnswerShare}%</span>
           <span className="text">answered correctly</span>
-        </p>
+         </p>
         <p>
           <span className="number">{wrongAnswerShare}%</span>
           <span className="text">answered incorrectly</span>
-        </p>
+         </p>
       </div>
       <ol>
         {userAnswers.map((answer, index) => {
           let cssClass = "user-answer";
 
-          if (answer === null) {
+           if (answer === null) {
             cssClass += " skipped";
           } else if (answer === QUESTIONS[index].answers[0]) {
             cssClass += " correct";
@@ -47,17 +47,17 @@ function Summary({ userAnswers,  }) {
             cssClass += " wrong";
           }
           return (
-            <li key={index}>
+             <li key={index}>
               <h3>{index + 1}</h3>
               <p className="question">{QUESTIONS[index].text}</p>
               <p className={cssClass}>{answer ?? "skipped"}</p>
             </li>
-          );
+          ); 
         })}
       </ol>
-      <ResetQuiz />
+       <ResetQuiz />
     </div>
   );
 }
-
+ 
 export default Summary;
