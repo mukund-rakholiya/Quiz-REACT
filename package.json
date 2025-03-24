@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "million": "^3.1.11",
+    "posthog-js": "^1.232.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
