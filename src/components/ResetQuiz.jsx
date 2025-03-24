@@ -1,6 +1,5 @@
 import React from 'react'
 
-// million-ignore
 export default function ResetQuiz() {
     function handleClick() {
         window.location.reload();

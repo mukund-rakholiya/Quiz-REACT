@@ -3,7 +3,6 @@ import QuestionTimer from "./QuestionTimer";
 import Answer from "./Answers";
 import QUESTIONS from "../question";
 
-// million-ignore
 function Question({ index, onSelectAnswer, onSkipAnswer }) {
   const [answer, setAnswer] = useState({
     selectedAnswer: "",

@@ -3,7 +3,6 @@ import quizcomplete from "../assets/quiz-complete.png";
 import QUESTIONS from "../question";
 import ResetQuiz from "./ResetQuiz.jsx";
 
-// million-ignore
 function Summary({ userAnswers,  }) {
   const skippedAnswer = userAnswers.filter((answer) => answer === null);
   const correctAnswer = userAnswers.filter(
