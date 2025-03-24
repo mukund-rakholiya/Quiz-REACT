@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 
+// million-ignore
 function Answer({ answers, selectedAnswer, answerState, onSelect }) {
   const shuffledAnswers = useRef();
 

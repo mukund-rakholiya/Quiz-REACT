@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+// million-ignore
 function QuestionTimer({ timeout, onTimeout, mode }) {
   const [remainingTime, setRemainingTime] = useState(timeout);
 

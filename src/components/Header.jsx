@@ -2,6 +2,7 @@ import React from "react";
 
 import logoImg from "../assets/quiz-logo.png";
 
+// million-ignore
 export default function Header() {
   return (
     <header>

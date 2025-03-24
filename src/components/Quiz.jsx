@@ -3,6 +3,7 @@ import QUESTIONS from "../question.js";
 import Question from "./Question.jsx";
 import Summary from "./Summary.jsx";
 
+// million-ignore
 function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
 
