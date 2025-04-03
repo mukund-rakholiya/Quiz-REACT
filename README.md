@@ -20,11 +20,11 @@ src/
 │   ├── Question.jsx        # Individual question component
 │   ├── QuestionTimer.jsx   # Countdown timer for each question
 │   ├── Answers.jsx         # Displays multiple-choice options
-│   ├── Summary.jsx         # Shows quiz results
-│   ├── ResetQuiz.jsx       # Button to restart quiz
-├── question.js             # Question dataset
-├── App.js                  # Root component
-└── index.js                # Entry point
+│   ├── Summary.jsx         # Shows quiz results 
+│   ├── ResetQuiz.jsx       # Button to restart quiz  
+├── question.js             # Question dataset 
+├── App.js                  # Root component 
+└── index.js                # Entry point 
 ```
 
 ## Installation & Setup 🚀
