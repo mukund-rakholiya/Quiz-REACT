@@ -4,11 +4,11 @@
 **Quiz-React** is an interactive quiz application built with React that challenges users with multiple-choice questions. It provides real-time feedback, tracks progress, and allows users to retry the quiz. The application dynamically handles skipped, correct, and incorrect answers while maintaining a smooth user experience.
 
 ## Features ✨
+- 🎨 **Responsive UI:** Clean and user-friendly interface with engaging visuals.
 - 🕒 **Timer-Based Questions:** Each question has a countdown timer to add a challenge.
 - ✅ **Instant Answer Validation:** Shows real-time feedback on whether the answer is correct or incorrect.
 - 🔄 **Replay Functionality:** Users can reset and attempt the quiz again.
 - 📊 **Performance Summary:** Displays a summary with the percentage of correct, incorrect, and skipped questions.
-- 🎨 **Responsive UI:** Clean and user-friendly interface with engaging visuals.
 
 ## Project Structure 📂
 ```bash
