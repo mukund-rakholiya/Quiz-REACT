@@ -1,13 +1,14 @@
 import React, { useCallback, useState } from "react";
-import QUESTIONS from "../question.js";
-import Question from "./Question.jsx";
 import Summary from "./Summary.jsx";
+import Question from "./Question.jsx";
+import QUESTIONS from "../question.js";
 
 // million-ignore
 function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
 
   const activeQuestionIndex = userAnswers.length;
+  
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
   const handleSelectAnswer = useCallback(function handleSelectAnswer(
@@ -24,10 +25,10 @@ function Quiz() {
     [handleSelectAnswer]
   );
 
+  
   if (quizIsComplete) {
     return <Summary userAnswers={userAnswers} />;
   }
-
   return (
     <div id="quiz">
       <Question
