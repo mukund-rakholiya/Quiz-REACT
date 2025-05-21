@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QuestionTimer from "./QuestionTimer";
-import Answer from "./Answers";
 import QUESTIONS from "../question";
+import Answer from "./Answers";
 
 function Question({ index, onSelectAnswer, onSkipAnswer }) {
   const [answer, setAnswer] = useState({
